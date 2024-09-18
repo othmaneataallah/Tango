@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp1", "top": 298.5, "left": 53.24, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 186.44,
+      "left": 48.63,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 544.7,
+      "left": 67.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 602.3,
+      "left": 10,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 602.3,
+      "left": 125.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": 60,
+      "left": 15.5,
+      "attrs": { "distance": "88" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 262.5,
+      "left": 203.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp1:GND.3", "bz1:1", "black", [ "h76.8" ] ],
+    [ "bz1:2", "esp1:19", "green", [ "v48", "h-0.4" ] ],
+    [ "oled1:GND", "esp1:GND.2", "black", [ "v-9.6", "h76.8", "v144" ] ],
+    [ "ultrasonic1:GND", "esp1:GND.2", "black", [ "v0", "h46.8", "v172.8" ] ],
+    [ "ultrasonic1:VCC", "esp1:3V3", "red", [ "v28.8", "h-38.4", "v144" ] ],
+    [ "ultrasonic1:TRIG", "esp1:12", "green", [ "v19.2", "h-48.4", "v268.8" ] ],
+    [ "ultrasonic1:ECHO", "esp1:14", "green", [ "v19.2", "h-58.4", "v259.2" ] ],
+    [ "btn1:2.l", "esp1:GND.1", "black", [ "h-19.2", "v-124.6" ] ],
+    [ "btn2:2.l", "esp1:GND.1", "black", [ "h-9.6", "v-182.2" ] ],
+    [ "btn3:2.l", "esp1:GND.1", "black", [ "h-28.8", "v-38.2", "h-67.2", "v-144" ] ],
+    [ "btn1:1.r", "esp1:5", "green", [ "v0", "h38.6", "v-144" ] ],
+    [ "btn3:1.r", "esp1:17", "green", [ "v0" ] ],
+    [ "btn2:1.r", "esp1:16", "green", [ "v48", "h125", "v-220.8" ] ],
+    [ "oled1:VCC", "esp1:5V", "red", [ "v-9.6", "h-47.85", "v316.8" ] ],
+    [ "oled1:SCL", "esp1:22", "green", [ "v-9.6", "h67.5", "v163.2" ] ],
+    [ "oled1:SDA", "esp1:21", "green", [ "v0", "h48.07", "v182.4" ] ]
+  ],
+  "dependencies": {}
+}
