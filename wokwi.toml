@@ -2,3 +2,4 @@
 version = 1
 firmware = '.pio\build\denky32\firmware.bin'
 elf = '.pio\build\denky32\firmware.elf'
+rfc2217ServerPort = 4000
